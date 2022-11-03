@@ -1,7 +1,20 @@
 extends layout
-
 block content
   h1= title
   p Welcome to #{title}
   p Aparna Dondapati performing Lab 10 on pug templates to dynamically generate web pages on the server side
-   button(type='button',class='btn btn-secondary') press me
+  button(type="button", class="btn btn-primary", onclick="doBump()") Press Me
+   <br />
+  div(id="bump") Bump the count
+  <br />
+
+   script.
+      var count = 0;
+      var bump = 1;
+      function doBump() {
+          count+=bump;
+          bump+=1;
+          document.getElementById("bump").innerHTML=`Count ${count} with bump ${bump}`;
+          print=document.getElementById("bump");
+      print.innerHTML='Count '+count+' with bump '+bump;}
+         
